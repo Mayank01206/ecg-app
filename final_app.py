@@ -1,7 +1,7 @@
 import streamlit as st
 from Ecg import  ECG
 
-## above is the library
+## above is the librarys
 ecg = ECG()
 uploaded_file = st.file_uploader("Choose a file")
 
