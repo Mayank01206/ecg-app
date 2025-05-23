@@ -195,14 +195,14 @@ class ECG:
 	def DimensionalReduciton(self,test_final):
 
 		#first load the trained pca
-		pca_loaded_model = joblib.load(r'D:\ECG_implemented_successfully\preprocessing\PCA_ECG.pkl')
+		pca_loaded_model = joblib.load(r'PCA_ECG.pkl')
 		result = pca_loaded_model.transform(test_final)
 		final_df = pd.DataFrame(result)
 		return final_df
 
 	def ModelLoad_predict(self,final_df):
 
-		loaded_model = joblib.load(r'D:\ECG_implemented_successfully\preprocessing\Heart_Disease_Prediction_using_ECG.pkl')
+		loaded_model = joblib.load(r'Heart_Disease_Prediction_using_ECG.pkl')
 		result = loaded_model.predict(final_df)
 		if result[0] == 1:
 			return "You ECG corresponds to Myocardial Infarction"
